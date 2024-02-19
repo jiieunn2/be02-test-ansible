@@ -16,5 +16,5 @@ jobs:
         port: ${{ secrets.REMOTE_PORT }}
         script: |
           sudo rm -rf ./be02-test-ansible
-          sudo git clone https://github.com/jiieunn2/be02-test-ansible.git
+          sudo git clone https://github.com/jiieunn2/be02-test-ansible
           sudo mv -f ./be02-test-ansible/*.html /var/www/html
