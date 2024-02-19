@@ -1,4 +1,4 @@
-name: devops test
+name: devops
 
 on:
   push:
