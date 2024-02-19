@@ -1,14 +1,11 @@
 name: devops
-
 on:
   push:
     branches: [ main ]
-    
 jobs:
   deploy:
     name: Deploy to EC2
     runs-on: ubuntu-latest
-
     steps:
     - name: get code from github
       uses: appleboy/ssh-action@v0.1.9
@@ -18,5 +15,6 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.REMOTE_PORT }}
         script: |
-          echo test > /tmp/abcd
-
+          sudo rm -rf ./be02-test-ansible
+          sudo git clone https://github.com/jiieunn2/be02-test-ansible.git
+          sudo mv -f ./be02-test-ansible/*.html /var/www/html
